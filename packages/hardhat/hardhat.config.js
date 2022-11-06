@@ -1,44 +1,42 @@
-require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-etherscan");
-require("hardhat-abi-exporter");
-require("dotenv").config();
+// require("@nomicfoundation/hardhat-toolbox");
 
+// /** @type import('hardhat/config').HardhatUserConfig */
+// module.exports = {
+//   solidity: "0.8.9",
+// };
+
+
+require("@nomicfoundation/hardhat-toolbox");
+require("@nomiclabs/hardhat-etherscan");
+const dotenv = require("dotenv");
+dotenv.config();
+
+
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: {
-    version: "0.8.17",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
-      },
-    },
-  },
-  defaultNetwork: "mumbai",
+  solidity: "0.8.17",
+ 
   networks: {
-    hardhat: {
-      chainId: 1337,
-    },
-    mumbai: {
-      url: process.env.MUMBAI_ALCHEMY_API_URL,
-      accounts: {
-        mnemonic: process.env.MNEMONIC,
-      },
-      gas: 2100000,
-      gasPrice: 8000000000
-    }
+
+    skale: {
+            url: process.env.ENDPOINT_URL_SKALE,
+            accounts: [process.env.PRIVATEKEY_sFUEL]
+          },
+      
   },
-  abiExporter: {
-    path: "../next-app/contracts/ABI",
-    runOnCompile: true,
-    clear: true,
-    flat: true,
-    only: [],
-    spacing: 2,
-    pretty: false,
-  },
-  etherscan: {
+  etherscan: { 
     apiKey: {
-      polygonMumbai: process.env.POLYGONSCAN_KEY
-    }
+      skale: process.env.ETHERSCAN_API_KEY,
+    },
+    customChains: [
+      {
+        network: "skale",
+        chainId: parseInt(process.env.chainId),
+        urls: {
+          apiURL: process.env.API_URL,
+          browserURL: process.env.BLOCKEXPLORER_URL,
+        }
+      }
+    ]
   }
 };

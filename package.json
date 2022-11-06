@@ -5,38 +5,46 @@
     "private": true,
     "author": "Daiana Bilbao",
     "keywords": [
-      "ethereum",
-      "next",
-      "hardhat",
-      "rainbow",
-      "polygon",
-      "graph",
-      "monorepo",
-      "yarn",
-      "wagmi",
-      "starter",
-      "boilerplate"
+        "ethereum",
+        "next",
+        "hardhat",
+        "rainbow",
+        "polygon",
+        "graph",
+        "monorepo",
+        "yarn",
+        "wagmi",
+        "starter",
+        "boilerplate"
     ],
     "scripts": {
-      "next-app:build": "yarn workspace @hola-mundo-dapp/next-app build",
-      "next-app:start": "yarn workspace @hola-mundo-dapp/next-app start",
-      "next-app:dev": "yarn workspace @hola-mundo-dapp/next-app dev",
-      "build": "yarn workspace @hola-mundo-dapp/next-app build",
-      "start": "yarn workspace @hola-mundo-dapp/next-app start",
-      "dev": "yarn workspace @hola-mundo-dapp/next-app dev",
-      "node": "yarn workspace @hola-mundo-dapp/hardhat chain",
-      "compile": "yarn workspace @hola-mundo-dapp/hardhat compile",
-      "deploy": "yarn workspace @hola-mundo-dapp/hardhat deploy",
-      "subgraph:codegen": "yarn workspace @hola-mundo-dapp/subgraph codegen",
-      "subgraph:build": "yarn workspace @hola-mundo-dapp/subgraph build",
-      "subgraph:deploy": "yarn workspace @hola-mundo-dapp/subgraph deploy",
-      "subgraph:create-local": "yarn workspace @hola-mundo-dapp/subgraph create-local",
-      "subgraph:remove-local": "yarn workspace @hola-mundo-dapp/subgraph remove-local",
-      "subgraph:deploy-local": "yarn workspace @hola-mundo-dapp/subgraph deploy-local",
-      "subgraph:test": "yarn workspace @hola-mundo-dapp/subgraph test"
+        "next-app:build": "yarn workspace @hola-mundo-dapp/next-app build",
+        "next-app:start": "yarn workspace @hola-mundo-dapp/next-app start",
+        "next-app:dev": "yarn workspace @hola-mundo-dapp/next-app dev",
+        "build": "yarn workspace @hola-mundo-dapp/next-app build",
+        "start": "yarn workspace @hola-mundo-dapp/next-app start",
+        "dev": "yarn workspace @hola-mundo-dapp/next-app dev",
+        "node": "yarn workspace @hola-mundo-dapp/hardhat chain",
+        "compile": "yarn workspace @hola-mundo-dapp/hardhat compile",
+        "deploy": "yarn workspace @hola-mundo-dapp/hardhat deploy",
+        "subgraph:codegen": "yarn workspace @hola-mundo-dapp/subgraph codegen",
+        "subgraph:build": "yarn workspace @hola-mundo-dapp/subgraph build",
+        "subgraph:deploy": "yarn workspace @hola-mundo-dapp/subgraph deploy",
+        "subgraph:create-local": "yarn workspace @hola-mundo-dapp/subgraph create-local",
+        "subgraph:remove-local": "yarn workspace @hola-mundo-dapp/subgraph remove-local",
+        "subgraph:deploy-local": "yarn workspace @hola-mundo-dapp/subgraph deploy-local",
+        "subgraph:test": "yarn workspace @hola-mundo-dapp/subgraph test"
     },
     "workspaces": [
-      "packages/*"
+        "packages/*"
     ],
-    "dependencies": {}
-  }
+    "devDependencies": {
+        "@nomiclabs/hardhat-ethers": "^2.2.1",
+        "@nomiclabs/hardhat-web3": "^2.0.0",
+        "ethers": "^5.7.2",
+        "web3": "^1.8.0"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3"
+    }
+}
