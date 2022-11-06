@@ -87,7 +87,7 @@ import typeJSON from '../../data/type.json';
                             })}
                     </Select>
                     </FormControl>
-                    {/* FIELD: CRYPTO */}
+
                     <FormControl>
                     <FormLabel>Role</FormLabel>
                     <Select
@@ -101,7 +101,7 @@ import typeJSON from '../../data/type.json';
                             })}
                     </Select>
                     </FormControl>
-                    {/* FIELD: OTHER */}
+
                     <FormControl>
                     <FormLabel>Sort By</FormLabel>
                     <Select
@@ -116,103 +116,13 @@ import typeJSON from '../../data/type.json';
                 </Stack>
             </Box>
         </Flex>
-        {/* DASHBOARD */}
+
         <SimpleGrid minChildWidth='300px' spacing='40px'>
-            { faveCrypto 
-            && personCountry
-            && other == ""
-            && cryptoAndCountryQuery.data 
-            && cryptoAndCountryQuery.data.greetings.map((greeting) => (
-                <Card
-                    key={greeting.greetingID}
-                    greetingID={greeting.greetingID}
-                    ownerAddress={greeting.ownerAddress}
-                    country={greeting.country}
-                    name={greeting.name}
-                    age={greeting.age}
-                    message={greeting.message}
-                    crypto={greeting.crypto}
-                    imageURL={greeting.imageURL}
-                    timestamp={greeting.timestamp}> 
-                </Card>))
-            }
-            { faveCrypto 
-            && personCountry == ""
-            && other == ""
-            && cryptoQuery.data 
-            && cryptoQuery.data.greetings.map((greeting) => (
-                <Card
-                    key={greeting.greetingID}
-                    greetingID={greeting.greetingID}
-                    ownerAddress={greeting.ownerAddress}
-                    country={greeting.country}
-                    name={greeting.name}
-                    age={greeting.age}
-                    message={greeting.message}
-                    crypto={greeting.crypto}
-                    imageURL={greeting.imageURL}
-                    timestamp={greeting.timestamp}
-                    totalRecieved={greeting.totalRecieved}> 
-                </Card>))
-            }
-            { faveCrypto == "" 
-            && personCountry
-            && other == ""
-            && countryQuery.data 
-            && countryQuery.data.greetings.map((greeting) => ( 
-                <Card
-                    key={greeting.greetingID}
-                    greetingID={greeting.greetingID}
-                    ownerAddress={greeting.ownerAddress}
-                    country={greeting.country}
-                    name={greeting.name}
-                    age={greeting.age}
-                    message={greeting.message}
-                    crypto={greeting.crypto}
-                    imageURL={greeting.imageURL}
-                    timestamp={greeting.timestamp}
-                    totalRecieved={greeting.totalRecieved}> 
-                </Card>))
-            }
             { faveCrypto == "" 
             && personCountry == ""
             && other == ""
             && allGreetingsQuery.data 
             && allGreetingsQuery.data.greetings.map((greeting) => ( 
-                <Card
-                    key={greeting.greetingID}
-                    greetingID={greeting.greetingID}
-                    ownerAddress={greeting.ownerAddress}
-                    country={greeting.country}
-                    name={greeting.name}
-                    age={greeting.age}
-                    message={greeting.message}
-                    crypto={greeting.crypto}
-                    imageURL={greeting.imageURL}
-                    timestamp={greeting.timestamp}
-                    totalRecieved={greeting.totalRecieved}> 
-                </Card>))
-            }
-            { other == "Ultimas 24 Horas"
-            && yesterdayQuery.data 
-            && yesterdayQuery.data.greetings.map((greeting) => ( 
-                <Card
-                    key={greeting.greetingID}
-                    greetingID={greeting.greetingID}
-                    ownerAddress={greeting.ownerAddress}
-                    country={greeting.country}
-                    name={greeting.name}
-                    age={greeting.age}
-                    message={greeting.message}
-                    crypto={greeting.crypto}
-                    imageURL={greeting.imageURL}
-                    timestamp={greeting.timestamp}
-                    totalRecieved={greeting.totalRecieved}> 
-                </Card>))
-            }
-            { other == "Ordenar Por Saludos Recibidos"
-            && sortQuery.data 
-            && sortQuery.data.greetings.map((greeting) => ( 
                 <Card
                     key={greeting.greetingID}
                     greetingID={greeting.greetingID}
