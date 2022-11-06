@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import AdminButton from "./AdminButton";
 import MemberButton from "./MemberButton";
+import WorldCoin from './WorldCoin';
 
 function Hero() {
   const [isLargerThanLG] = useMediaQuery('(min-width: 62em)');
@@ -37,13 +38,15 @@ function Hero() {
               Project <br/>
             </Heading>
           </Flex>
-          {/* DESCRIPTION */}
           <Text mb="5" fontSize={isLargerThanLG ? 'lg' : 'base'} opacity={0.7}>
             add text here
           </Text>
           <Stack direction='row' spacing={1}>
             <AdminButton></AdminButton>
             <MemberButton></MemberButton>
+          </Stack>
+          <Stack direction='col' marginTop={5}>
+            <WorldCoin></WorldCoin>
           </Stack>
         </Box>
       </Flex>

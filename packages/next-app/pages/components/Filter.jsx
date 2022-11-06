@@ -73,7 +73,6 @@ import typeJSON from '../../data/type.json';
                 color={useColorModeValue('gray.700', 'whiteAlpha.900')}
                 shadow="base">
                 <Stack direction={ isLargerThanLG ? 'row' : 'column'} spacing={2}>[]
-                {/* FIELD: COUNTRY */}
                     <FormControl>
                     <FormLabel>Area</FormLabel>
                     <Select
@@ -87,7 +86,6 @@ import typeJSON from '../../data/type.json';
                             })}
                     </Select>
                     </FormControl>
-
                     <FormControl>
                     <FormLabel>Role</FormLabel>
                     <Select
@@ -101,7 +99,6 @@ import typeJSON from '../../data/type.json';
                             })}
                     </Select>
                     </FormControl>
-
                     <FormControl>
                     <FormLabel>Sort By</FormLabel>
                     <Select
