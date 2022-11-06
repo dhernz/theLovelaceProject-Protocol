@@ -23,54 +23,54 @@ import {
           overflow={'hidden'}>
           <Stack
             textAlign={'center'}
-            p={3}
+            p={5}
             color={useColorModeValue('gray.800', 'white')}
             align={'center'}>
             <Text
               fontSize={'sm'}
               fontWeight={500}
-              bg={useColorModeValue('green.100', 'green.900')}
+              bg={useColorModeValue('blue.100', 'blue.900')}
               p={2}
-              px={10}
-              color={'green.500'}
+              px={5}
+              color={'blue.500'}
               rounded={'full'}>
               Level Up
             </Text>
           </Stack>
           <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
-            <List spacing={3}>
+            <List spacing={5}>
               <ListItem>
-                <ListIcon as={CheckIcon} color="green.400" />
-                5.000 page views
+                <ListIcon as={CheckIcon} color="blue.400" />
+                Attend Events
               </ListItem>
               <ListItem>
-                <ListIcon as={CheckIcon} color="green.400" />
-                50 automation executions
+                <ListIcon as={CheckIcon} color="blue.400" />
+                Host Events
               </ListItem>
               <ListItem>
-                <ListIcon as={CheckIcon} color="green.400" />
-                50 identified users
+                <ListIcon as={CheckIcon} color="blue.400" />
+                Contribute
               </ListItem>
               <ListItem>
-                <ListIcon as={CheckIcon} color="green.400" />
-                All features
+                <ListIcon as={CheckIcon} color="blue.400" />
+                Participate
               </ListItem>
             </List>
   
             <Button
               mt={10}
               w={'full'}
-              bg={'green.400'}
+              bg={'blue.400'}
               color={'white'}
               rounded={'xl'}
               boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
               _hover={{
-                bg: 'green.500',
+                bg: 'blue.500',
               }}
               _focus={{
-                bg: 'green.500',
+                bg: 'blue.500',
               }}>
-              Start your trial
+              Check Progress
             </Button>
           </Box>
         </Box>

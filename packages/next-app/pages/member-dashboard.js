@@ -44,6 +44,7 @@ function StatsCard(props) {
           <StatsCard title={'DAO'} stat={'H.E.R. DAO LATAM'} />
           <StatsCard title={'POAPs Collected'} stat={'40'} />
           <StatsCard title={'NFTs Collected'} stat={'2'} />
+          <StatsCard title={'Kudos Collected'} stat={'5'} />
         </SimpleGrid>
         <NextLevel></NextLevel>
       </Box>
