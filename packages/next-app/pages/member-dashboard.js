@@ -6,8 +6,11 @@ import {
     StatLabel,
     StatNumber,
     useColorModeValue,
+    Center
   } from '@chakra-ui/react';
 import NextLevel from './components/NextLevel';
+import { IpfsImage } from 'react-ipfs-image';
+
 
 function StatsCard(props) {
     const { title, stat } = props;
@@ -39,8 +42,12 @@ function StatsCard(props) {
           fontWeight={'bold'}>
           Member Dashboard
         </chakra.h1>
+
+        <Center py={6}>
+        <IpfsImage width={"300px"} hash='QmWVa8hpVSj6QR34Vb9sgLcSw33pPhVFq88uR4gA2uQP25' gatewayUrl='https://gateway.pinata.cloud/ipfs/'/> 
+        </Center>  
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 1, lg: 2 }}>
-          <StatsCard title={'Level'} stat={'1'} />
+      {/* you can pass in a gateway URL of your choice. the default gateway url is `https://ipfs.infura.io/ipfs` */}
           <StatsCard title={'DAO'} stat={'H.E.R. DAO LATAM'} />
           <StatsCard title={'POAPs Collected'} stat={'40'} />
           <StatsCard title={'NFTs Collected'} stat={'2'} />
