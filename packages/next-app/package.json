@@ -22,11 +22,20 @@
     "@rainbow-me/rainbowkit": "^0.4.5",
     "ethers": "^5.6.9",
     "framer-motion": "^6",
+    "latest": "^0.2.0",
     "next": "^12.1.6",
+    "node-fetch": "^3.2.10",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
     "wagmi": "^0.6.0",
     "web3.storage": "^4.4.0"
-  }
+  },
+  "description": "``` yarn dev yarn start yarn build ```",
+  "main": "next.config.js",
+  "module": "main.js",
+  "keywords": [],
+  "author": "",
+  "type": "module"
+
 }
