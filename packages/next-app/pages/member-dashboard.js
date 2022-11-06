@@ -6,9 +6,11 @@ import {
     StatLabel,
     StatNumber,
     useColorModeValue,
-    Center
+    Center,
+    Button
   } from '@chakra-ui/react';
 import NextLevel from './components/NextLevel';
+import Filter from './components/Filter';
 import { IpfsImage } from 'react-ipfs-image';
 
 
@@ -35,6 +37,21 @@ function StatsCard(props) {
   export default function BasicStatistics() {
     return (
       <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+            <Button
+              mt={10}
+              w={'full'}
+              bg={'blue.400'}
+              color={'white'}
+              rounded={'xl'}
+              boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+              _hover={{
+                bg: 'blue.500',
+              }}
+              _focus={{
+                bg: 'blue.500',
+              }}>
+              View Messages
+            </Button>
         <chakra.h1
           textAlign={'center'}
           fontSize={'4xl'}

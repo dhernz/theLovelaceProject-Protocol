@@ -12,8 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { gql, useQuery } from "@apollo/client";
 import Card from "./Card";
-import countriesJSON from '../../data/countries.json';
-import cryptocurrenciesJSON from '../../data/cryptocurrencies.json';
+import areaJSON from '../../data/area.json';
+import typeJSON from '../../data/type.json';
 
     const ALL_GREETINGS = gql`
         query getGreetings {
@@ -166,12 +166,12 @@ import cryptocurrenciesJSON from '../../data/cryptocurrencies.json';
                 <Stack direction={ isLargerThanLG ? 'row' : 'column'} spacing={2}>[]
                 {/* FIELD: COUNTRY */}
                     <FormControl>
-                    <FormLabel>País</FormLabel>
+                    <FormLabel>Area</FormLabel>
                     <Select
                         id={"Country"}
                         onChange={(e) => setCountry(e.target.value)}
-                        placeholder='Selecciona País'>
-                            {countriesJSON.map((country) => {return(
+                        placeholder='Select Area'>
+                            {areaJSON.map((country) => {return(
                                 <option key={country.code}>
                                     {country.name}
                                 </option>);
@@ -180,12 +180,12 @@ import cryptocurrenciesJSON from '../../data/cryptocurrencies.json';
                     </FormControl>
                     {/* FIELD: CRYPTO */}
                     <FormControl>
-                    <FormLabel>Criptomoneda Favorita</FormLabel>
+                    <FormLabel>Role</FormLabel>
                     <Select
                         id={"Crypto"}
                         onChange={(e) => setCrypto(e.target.value)}
-                        placeholder='Selecciona Criptomoneda'>
-                            {cryptocurrenciesJSON.map((crypto) => {return(
+                        placeholder='Select Role'>
+                            {typeJSON.map((crypto) => {return(
                                 <option key={crypto.code}>
                                     {crypto.name}
                                 </option>);
@@ -194,16 +194,13 @@ import cryptocurrenciesJSON from '../../data/cryptocurrencies.json';
                     </FormControl>
                     {/* FIELD: OTHER */}
                     <FormControl>
-                    <FormLabel>Otro</FormLabel>
+                    <FormLabel>Sort By</FormLabel>
                     <Select
                         id={"Other"}
                         onChange={(e) => setOther(e.target.value)}
-                        placeholder='Seleccione Una Opción'>
+                        placeholder='Select Sort'>
                             <option>
-                                Ultimas 24 Horas
-                            </option>
-                            <option>
-                                Ordenar Por Saludos Recibidos
+                                Level
                             </option>
                     </Select>
                     </FormControl>

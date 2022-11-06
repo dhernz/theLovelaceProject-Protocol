@@ -13,12 +13,14 @@ import {
     Stack,
     Textarea,
     Text,
-    Switch
+    Switch,
+    Center
 } from '@chakra-ui/react';
-
+import Filter from "./components/Filter";
   export default function Admin() {
     return (
     <div>
+    <Center py={6}>
         <Stack
             bg={'gray.50'}
             rounded={'xl'}
@@ -33,8 +35,6 @@ import {
                 fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
                 Onboard Your DAO!
                 </Heading>
-                <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md' }}>
-                </Text>
             </Stack>
 
             <Box as={'form'} mt={10}>
@@ -88,7 +88,16 @@ import {
                 onClick={(e)=> handleSubmit(e)}>
                 Submit
             </Button>
+
+            <Heading
+                color={'gray.800'}
+                lineHeight={1.1}
+                fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
+                Current Members
+            </Heading>
+            <Filter></Filter>
         </Stack>
+        </Center>
     </div>
     );
   }

@@ -93,33 +93,33 @@ export default function Card({ greetingID, ownerAddress, country, name, age, mes
           textAlign={'center'}>
             <Avatar
                 size={'xl'}
-                src={imageURL}
+                src={"https://gateway.pinata.cloud/ipfs/QmWVa8hpVSj6QR34Vb9sgLcSw33pPhVFq88uR4gA2uQP25"}
                 alt={'Avatar Alt'}
                 mb={4}
                 pos={'relative'}
             />
-            <Heading fontSize={'2xl'} fontFamily={'body'}> Hola Mundo! 🌎 </Heading>
+            <Heading fontSize={'2xl'} fontFamily={'body'}> {name} </Heading>
             {/* ABOUT ME */}
             <Accordion allowToggle>
                 <AccordionItem>
                     <AccordionButton _expanded={{ bg: 'purple.200', color: 'purple.500'}}>
                         <Box fontWeight={700} color={'purple.500'} flex='1' textAlign='center'> 
-                            Sobre Mí
+                            Member Info
                         </Box>
                         <AccordionIcon />
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                        <CardText boldText={"Greeting ID:"} text={greetingID}/>
+                        <CardText boldText={"Member ID:"} text={"disfhiw843"}/>
                         <CardText boldText={"Address:"} text={ownerAddress}/>
-                        <CardText boldText={"Mi Nombre Es:"} text={name}/>
-                        <CardText boldText={"País:"} text={country}/>
-                        <CardText boldText={"Criptomoneda Favorita:"} text={crypto}/>
-                        <CardText boldText={"Mensaje:"} text={message}/>
+                        <CardText boldText={"Name:"} text={name}/>
+                        <CardText boldText={"DAO:"} text={"H.E.R. DAO LATAM"}/>
+                        <CardText boldText={"Area:"} text={"Developer"}/>
+                        <CardText boldText={"Type:"} text={"Governor"}/>
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
             {/* RECIEVED GREETINGS */}
-            <CardText boldText={"Recibido:"} text={totalRecieved}/>
+            <CardText boldText={"Level:"} text={"1"}/>
             {/* SEND GREETING */}
             <Button
                 flex={1}
@@ -130,7 +130,7 @@ export default function Card({ greetingID, ownerAddress, country, name, age, mes
                 color="white"
                 _hover={{ bg: 'blue.500' }}
                 onClick={(e)=> sendGreeting(e)}>
-                Manda Saludos 👋
+                Send Notification
             </Button>
         </Box>
       </Center>

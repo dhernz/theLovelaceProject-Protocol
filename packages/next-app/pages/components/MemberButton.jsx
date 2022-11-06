@@ -7,7 +7,6 @@ import {
 import { useAccount } from 'wagmi';
 
 export default function Choose() {
-  const [isLargerThanLG] = useMediaQuery('(min-width: 62em)');
   return (
     <>              
       <Button
