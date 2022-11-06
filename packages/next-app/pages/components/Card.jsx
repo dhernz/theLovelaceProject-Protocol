@@ -16,7 +16,7 @@ import {
 import CardText from "./CardText.jsx";
 import { useContract, useSigner } from 'wagmi';
 import { contractAddress } from '../../utils/contractAddress.js';
-import contractABI from '../../contracts/ABI/HelloWorld.json';
+import contractABI from '../../contracts/ABI/LovelaceNFT.json';
 
 
 export default function Card({ greetingID, ownerAddress, country, name, age, message, crypto, imageURL, timestamp, totalRecieved }) {

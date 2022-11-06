@@ -100,7 +100,6 @@ contract LovelaceNFT is ERC721, ERC721URIStorage, Ownable, EIP712, ERC721Votes {
           )
       );
 
-      console.log(base64str);
       return base64str;
     }
 

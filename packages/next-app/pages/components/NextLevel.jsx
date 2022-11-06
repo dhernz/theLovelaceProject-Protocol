@@ -38,7 +38,7 @@ import {
             </Text>
           </Stack>
           <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
-            <List spacing={5}>
+            <List spacing={3}>
               <ListItem>
                 <ListIcon as={CheckIcon} color="blue.400" />
                 Attend Events
@@ -56,7 +56,6 @@ import {
                 Participate
               </ListItem>
             </List>
-  
             <Button
               mt={10}
               w={'full'}
@@ -70,7 +69,7 @@ import {
               _focus={{
                 bg: 'blue.500',
               }}>
-              Check Progress
+              View Tiers
             </Button>
           </Box>
         </Box>
