@@ -15,7 +15,7 @@ import Card from "./Card";
 import areaJSON from '../../data/area.json';
 import typeJSON from '../../data/type.json';
 
-    const ALL_GREETINGS = gql`
+    const ALL = gql`
         query getGreetings {
             greetings {
                 greetingID
@@ -31,76 +31,7 @@ import typeJSON from '../../data/type.json';
             }
         }
     `;
-
-    const PAST_24_HOURS_GREETINGS = gql`
-        query getGreetings($yesterdayTimestamp: String) { 
-            greetings(where: {timestamp_gt: $yesterdayTimestamp }) {
-                greetingID
-                ownerAddress
-                country
-                name
-                age
-                message
-                crypto
-                imageURL
-                timestamp
-                totalRecieved
-            }
-        }
-    `;
-
-    const CRYPTO_AND_COUNTRY_GREETINGS = gql`
-        query getGreetings($faveCrypto: String, $personCountry: String) {
-            greetings(where: {crypto: $faveCrypto, country: $personCountry}) {
-                greetingID
-                ownerAddress
-                country
-                name
-                age
-                message
-                crypto
-                imageURL
-                timestamp
-                totalRecieved
-            }
-        }
-    `;
-
-    const COUNTRY_GREETINGS = gql`
-        query getGreetings($personCountry: String) {
-            greetings(where: {country: $personCountry }) {
-                greetingID
-                ownerAddress
-                country
-                name
-                age
-                message
-                crypto
-                imageURL
-                timestamp
-                totalRecieved
-            }
-        }
-    `;
-
-    const CRYPTO_GREETINGS = gql`
-        query getGreetings($faveCrypto: String) {
-            greetings(where: {crypto: $faveCrypto }) {
-                greetingID
-                ownerAddress
-                country
-                name
-                age
-                message
-                crypto
-                imageURL
-                timestamp
-                totalRecieved
-            }
-        }
-    `;
-
-    const SORT_GREETINGS = gql`
+    const SORT = gql`
         query getGreetings {
             greetings(orderBy: totalRecieved orderDirection: desc) {
                 greetingID
@@ -126,33 +57,11 @@ import typeJSON from '../../data/type.json';
     const [faveCrypto, setCrypto] = useState("");
     const [other, setOther] = useState("");
 
-    const cryptoAndCountryQuery = useQuery(CRYPTO_AND_COUNTRY_GREETINGS, {
-        variables: {
-            faveCrypto,
-            personCountry
-        }
-    });
-    const cryptoQuery = useQuery(CRYPTO_GREETINGS, {
-        variables: { 
-            faveCrypto
-        }
-    });
-    const countryQuery = useQuery(COUNTRY_GREETINGS, {
-        variables: { 
-            personCountry
-        }
-    });
-    const allGreetingsQuery = useQuery(ALL_GREETINGS);
-    const yesterdayQuery = useQuery(PAST_24_HOURS_GREETINGS, {        
-        variables: { 
-            yesterdayTimestamp
-        }
-    })
-    const sortQuery = useQuery(SORT_GREETINGS);
+    const allGreetingsQuery = useQuery(ALL);
+    const sortQuery = useQuery(SORT);
 
     return (
       <div>
-        {/* FILTER OPTIONS */}
         <Flex 
             align="center" 
             justify="center">

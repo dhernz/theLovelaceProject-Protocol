@@ -19,7 +19,7 @@ import { contractAddress } from '../../utils/contractAddress.js';
 import contractABI from '../../contracts/ABI/LovelaceNFT.json';
 
 
-export default function Card({ greetingID, ownerAddress, country, name, age, message, crypto, imageURL, timestamp, totalRecieved }) {
+export default function Card({ greetingID, ownerAddress, name }) {
     // Chakura-UI Toast Messages
     const toast = useToast();
     // Transaction States
@@ -59,11 +59,9 @@ export default function Card({ greetingID, ownerAddress, country, name, age, mes
     // Send Greeting
     const sendGreeting = async (cid) => {
         try {
-            // Reset
             setSuccess(false)
             setLoading(false)
             if (contractOnMumbai) {
-            // Calling smart contract function: sendGreeting
             const txn = await contractOnMumbai.sendGreeting(greetingID,{ gasLimit: 900000 });
             setLoading(true);
             await txn.wait();
@@ -99,7 +97,6 @@ export default function Card({ greetingID, ownerAddress, country, name, age, mes
                 pos={'relative'}
             />
             <Heading fontSize={'2xl'} fontFamily={'body'}> {name} </Heading>
-            {/* ABOUT ME */}
             <Accordion allowToggle>
                 <AccordionItem>
                     <AccordionButton _expanded={{ bg: 'purple.200', color: 'purple.500'}}>
@@ -118,9 +115,7 @@ export default function Card({ greetingID, ownerAddress, country, name, age, mes
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
-            {/* RECIEVED GREETINGS */}
             <CardText boldText={"Level:"} text={"1"}/>
-            {/* SEND GREETING */}
             <Button
                 flex={1}
                 fontSize={'sm'}

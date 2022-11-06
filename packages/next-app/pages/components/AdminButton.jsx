@@ -5,7 +5,6 @@ import {
 } from '@chakra-ui/react';
 
 export default function Choose() {
-  const [isLargerThanLG] = useMediaQuery('(min-width: 62em)');
   return (
     <>         
         <Button
